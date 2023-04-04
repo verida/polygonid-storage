@@ -1,0 +1,9 @@
+/node_modules
+coverage
+dist
+docs
+temp
+.DS_Store
+.idea
+.vscode
+/tests/proofs/testdata
