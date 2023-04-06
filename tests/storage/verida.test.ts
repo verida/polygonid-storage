@@ -21,19 +21,6 @@ const initDataStorage = async (context: IContext): Promise<IDataStorage> {
       mt: new VeridaMerkleTreeStorage(40,  await VeridaDataSourceFactory<Profile>(context, 'polygonid_mt')),
       states: new EthStateStorage(conf),
     }
-    /*
-    const dataStorage = {
-      credential: new CredentialStorage(
-        new InMemoryDataSource<W3CCredential>()
-      ),
-      identity: new IdentityStorage(
-        new InMemoryDataSource<Identity>(),
-        new InMemoryDataSource<Profile>()
-      ),
-      mt: new InMemoryMerkleTreeStorage(40),
-      states: new EthStateStorage(conf),
-    }
-    */
 
     return dataStorage
   }
