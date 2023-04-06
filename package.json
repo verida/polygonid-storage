@@ -64,6 +64,9 @@
     "@verida/types": "^2.2.0",
     "uuid": "^9.0.0"
   },
+  "resolutions": {
+    "fastfile": "0.0.19"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
