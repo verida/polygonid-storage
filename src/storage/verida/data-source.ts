@@ -17,7 +17,7 @@ export class VeridaDataSource<Type> implements IDataSource<Type> {
       try {
         record = await this.database.get(key)
       } catch (err: any) {
-        record._id = value[keyName]
+        record._id = key
         record.data = value
       }
   
@@ -31,8 +31,16 @@ export class VeridaDataSource<Type> implements IDataSource<Type> {
   
     /** gets value from from the memory */
     public async get(key: string, keyName = 'id'): Promise<Type | undefined> {
-      const result: any = <Type>await this.database.get(key)
-      return result.data
+      try {
+        const result: any = <Type>await this.database.get(key)
+        return result.data
+      } catch (err) {
+        if (err.name == 'not_found') {
+          return
+        }
+
+        throw err
+      }
     }
   
     /** loads from value from the network */
