@@ -1,6 +1,6 @@
 {
   "name": "@verida/polygonid-storage",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "SDK to provide Verida network storage to Polygon ID",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
